@@ -1,0 +1,687 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Header */
+.header {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background-image: url("C:/Users/Legion/Downloads/uttarakhand-rescue-ops.jpg");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+}
+
+/* Pseudo-element for the blur effect */
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent color overlay */
+    backdrop-filter: blur(2px); /* Adjust the blur value as needed */
+    z-index: 1; /* Ensure it is above the background but below other content */
+}
+
+/* Ensure content in the header appears above the blur effect */
+.header > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Header title */
+.header h1 {
+    font-size: 4vw;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px; /* Spacing between title and search bar */
+}
+
+.header h4 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px; /* Spacing between title and search bar */
+}
+
+/* Search Bar */
+.search-bar {
+    background: #fff;
+    width: 70%;
+    padding: 6px 10px 6px 30px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center; /* Center items vertically within search bar */
+    margin-bottom: 20px; /* Ensure spacing between search bar and other content */
+}
+
+.search-bar form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.search-bar form input {
+    border: 0;
+    outline: none;
+    background: transparent;
+    flex: 1; /* Allow input fields to grow */
+}
+
+.search-bar form button {
+    background-color: #1bbc9b;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+.location-input {
+    flex: 1;
+}
+
+.search-bar form label {
+    font-weight: 600;
+}
+
+.sub-title {
+    margin: 50px 0 20px;
+    font-size: 2.2vw;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Navbar styling */
+#navbar {
+    background: rgba(0, 0, 0, 0.95); /* Semi-transparent black */
+    color: #fff; /* White text color */
+    position: fixed; /* Fixed position at the top */
+    top: 0;
+    height: 70px; /* Height of the navbar */
+    width: 100%; /* Full width */
+    z-index: 10; /* Ensure it's above other elements */
+    display: flex;
+    align-items: center; /* Center items vertically */
+    padding: 0 20px; /* Padding on left and right */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Container for the navbar content */
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between; /* Distribute space between items */
+    align-items: center; /* Center items vertically */
+    width: 100%; /* Full width */
+}
+
+/* Logo styling */
+.logo img {
+    height: 50px; /* Set height for logo */
+    width: auto; /* Maintain aspect ratio */
+}
+
+/* Navbar menu styling */
+#menu {
+    list-style: none; /* Remove default list styling */
+    display: flex; /* Align items horizontally */
+    padding: 0;
+    margin: 0;
+}
+
+#menu li {
+    margin: 0 15px; /* Spacing between menu items */
+}
+
+#menu li a {
+    color: #aab1b8; /* Dark text color */
+    font-size: 1em; /* Font size */
+    text-decoration: none; /* Remove underline */
+    text-transform: uppercase; /* Uppercase text */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+#menu li a:hover {
+    color: #1bbc9b; /* Change color on hover */
+}
+
+/* Button styling */
+button {
+    background: transparent;
+    border-radius: 20px;
+    position: relative;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid #1bbc9b;
+    outline: none;
+    overflow: hidden;
+    color: #1bbc9b;
+    transition: color 0.3s 0.1s ease-out;
+    text-align: center;
+
+}
+
+button span {
+    margin: 10px;
+}
+
+button::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    content: '';
+    border-radius: 50%;
+    display: block;
+    width: 20em;
+    height: 20em;
+    left: -5em;
+    text-align: center;
+    transition: box-shadow 0.5s ease-out;
+    z-index: -1;
+}
+
+button:hover {
+    color: #fff;
+    border: 1px solid #1bbc9b;
+}
+
+button:hover::before {
+    box-shadow: inset 0 0 0 10em #1bbc9b;
+}
+
+/* Card container */
+.card-container {
+    padding-bottom: 150px;
+    padding-top: 150px;
+    display: flex;
+    justify-content: center; /* Center cards horizontally */
+    align-items: center;
+    width: 100%; /* Full width of the viewport */
+    max-width: 1200px; /* Adjust max-width as needed */
+    gap: 20px; /* Space between cards */
+    margin: 20px auto; /* Center card container vertically if needed */
+}
+/* Card Styles */
+.card {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 150px;
+    background: #c6c6c6;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.1s linear;
+    position: relative;
+    overflow: hidden;
+    text-align: center; /* Center text within the card */
+    z-index: 1; /* Ensure card content is above pseudo-element */
+}
+
+.card img {
+    width: 80px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Space between image and text */
+    z-index: 2; /* Ensure image is above the pseudo-element */
+}
+
+.card p {
+    margin: 0; /* Remove default margin */
+    z-index: 2; /* Ensure text is above the pseudo-element */
+}
+
+/* Optional: Add a pseudo-element for visual effects */
+.card::after {
+    content: "";
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background-color:#aab1b8;
+    position: absolute;
+    right: 250px;
+    transition: right 0.4s linear;
+    z-index: 0; /* Ensure pseudo-element is below the card content */
+}
+
+.card:hover::after {
+    right: -160px;
+}
+
+.header-section {
+    padding-top: 100px;
+    background: #d3d1d4;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    height: auto; /* Allow height to adjust based on content */
+    text-align: center; /* Center text */
+    padding-bottom: 20px; /* Ensure some space at the bottom */
+}
+
+.header-section h1 {
+    font-size: 2.5em; /* Base font size for larger screens */
+    font-weight: 600;
+    margin-bottom: 10px; /* Space between h1 and h6 */
+}
+
+.header-section h6 {
+    font-size: 1em; /* Base font size for larger screens */
+    font-weight: 400;
+    color: #666; /* Adjust color for h6 */
+    margin-bottom: 20px; /* Space between h6 and cards */
+}
+
+.card-container-second {
+    display: flex;
+    flex-direction: row; /* Align cards horizontally */
+    flex-wrap: wrap; /* Allow cards to wrap onto the next line */
+    justify-content: center; /* Center cards horizontally */
+    align-items: center;
+    gap: 20px; /* Space between cards */
+    max-width: 100%; /* Ensure cards fit within container */
+    margin: 0 auto; /* Center container within parent */
+    padding: 0 10px; /* Add padding to prevent cards from touching the edges */
+}
+
+.feature-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 301px;
+    background: #fff;
+    border-radius: 10px; /* Rounded corners for card */
+    overflow: hidden;
+    box-shadow: 0 14px 26px rgba(0,0,0,0.04);
+    transition: all 0.3s ease-out;
+    text-decoration: none;
+    padding: 20px; /* Padding inside the card */
+    box-sizing: border-box; /* Ensure padding is included in total width/height */
+}
+
+.feature-card:hover {
+    transform: translateY(-5px) scale(1.005);
+    box-shadow: 0 24px 36px rgba(0,0,0,0.11);
+    background-color:#aab1b8;
+}
+
+.feature-card h3 {
+    font-size: 1.2em; /* Base font size for larger screens */
+    color: #080a0a;
+    margin: 10px 0; /* Margin around title */
+}
+
+.feature-card p {
+    font-size: 15px; /* Base font size for larger screens */
+    color: #4C5656;
+    margin-top: 10px; /* Space between title and description */
+}
+
+.image-wrapper {
+    width: 100px; /* Base size for larger screens */
+    height: 100px; /* Base size for larger screens */
+    border-radius: 50%; /* Circular image wrapper */
+    background: #fff; /* Background color for circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px; /* Space between image and card title */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for better visual */
+    overflow: hidden; /* Hide overflow to maintain circular shape */
+}
+
+.image-wrapper img {
+    border-radius: 0%; /* Ensure the image itself is circular */
+    width: 50%; /* Make the image cover the circle */
+    height: 50%; /* Make the image cover the circle */
+    object-fit: cover; /* Ensure the image covers the circle */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .header-section h1 {
+        font-size: 2em; /* Adjust font size for medium screens */
+    }
+
+    .header-section h6 {
+        font-size: 0.9em; /* Adjust font size for medium screens */
+    }
+
+    .feature-card {
+        width: 200px; /* Adjust card width for medium screens */
+        height: auto; /* Allow height to adjust */
+    }
+
+    .image-wrapper {
+        width: 90px; /* Adjust size for medium screens */
+        height: 90px; /* Adjust size for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .header-section h1 {
+        font-size: 1.5em; /* Adjust font size for smaller screens */
+    }
+
+    .header-section h6 {
+        font-size: 0.8em; /* Adjust font size for smaller screens */
+    }
+
+    .card-container {
+        flex-direction: column; /* Stack cards vertically */
+    }
+
+    .feature-card {
+        width: 100%; /* Full width of container */
+        max-width: 320px; /* Max width for cards */
+        margin: 10px 0; /* Space between stacked cards */
+    }
+
+    .image-wrapper {
+        width: 80px; /* Adjust size for smaller screens */
+        height: 80px; /* Adjust size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .header-section h1 {
+        font-size: 1.2em; /* Further adjust font size for small screens */
+    }
+
+    .header-section h6 {
+        font-size: 0.7em; /* Further adjust font size for small screens */
+    }
+
+    .feature-card {
+        width: 100%; /* Full width of container */
+        max-width: 280px; /* Max width for cards */
+    }
+
+    .image-wrapper {
+        width: 70px; /* Adjust size for very small screens */
+        height: 70px; /* Adjust size for very small screens */
+    }
+}
+
+
+.centered-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh; /* Full viewport height for centering */
+    text-align: center;
+}
+
+.rectangle-link {
+    text-decoration: none;
+    font-size: 1em;
+    color: #333; /* Text color */
+    font-weight: bold;
+    padding: 10px 20px; /* Padding inside the rectangle */
+    border: 2px solid #333; /* Rectangle border */
+    border-radius: 5px; /* Optional: Rounded corners */
+    transition: color 0.3s ease, border-color 0.3s ease; /* Smooth transition */
+}
+
+.rectangle-link:hover {
+    color: #1abc9c; /* Change text color on hover */
+    border-color: #1abc9c; /* Change border color on hover */
+}
+/* Footer Container */
+.footer {
+    background-color: #33383c;
+    color: #fff;
+    padding: 60px 0;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+/* Flex Container for Footer Columns */
+.row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Flex Column Styles */
+.col-md-4 {
+    flex: 1;
+    max-width: 300px; /* Adjust as needed */
+    padding: 0 15px;
+    box-sizing: border-box;
+    margin-bottom: 30px; /* Gap between columns */
+}
+
+/* Single Footer Styles */
+.single_footer {
+    margin-bottom: 30px; /* Gap between sections */
+    text-align: left; /* Align text and items to the left */
+}
+
+.single_footer h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block; /* Adjust width of the underline */
+    padding-bottom: 10px; /* Space for underline */
+}
+
+.single_footer h4::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 40px;
+    background-color: #1bbc9b;
+    position: absolute;
+    left: 0; /* Align to the left */
+    bottom: 0; /* Adjust to align with the text */
+}
+
+.single_footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left; /* Align list items to left */
+}
+
+.single_footer ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.single_footer ul li a {
+    color: #acacac;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin-left: 8px;
+}
+
+.single_footer ul li a:hover {
+    color: #1bbc9b;
+}
+
+/* Subscribe Styles */
+.subscribe {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 300px; /* Adjust as needed */
+    margin: 0 auto;
+}
+
+.subscribe__input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    font-size: 14px;
+    outline: none;
+}
+
+.subscribe__btn {
+    width: 60px;
+    background-color: #1bbc9b;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.subscribe__btn:hover {
+    background-color: #17a589;
+}
+
+/* Social Profile Styles */
+.social_profile {
+    margin-top: 20px;
+}
+
+.social_profile ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.social_profile ul li {
+    margin: 0 5px;
+}
+
+.social_profile ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #44484b;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.social_profile ul li a:hover {
+    background-color: #1bbc9b;
+}
+
+/* Footer Copyright */
+.copyright {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #44484b;
+    text-align: center;
+    font-size: 14px;
+}
+
+.copyright a {
+    color: #1bbc9b;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.copyright a:hover {
+    color: #17a589;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .col-md-4 {
+        margin-bottom: 30px;
+        max-width: 100%;
+    }
+}
+
+button a {
+    text-decoration: none;
+    color: inherit; /* Optional: Inherits the button's text color */
+}
+
+
+.button {
+    border: none;
+    color: #fff;
+    background-image: linear-gradient(30deg, #0400ff, #4ce3f7);
+    border-radius: 20px;
+    background-size: 100% auto;
+    font-family: inherit;
+    font-size: 17px;
+    padding: 0.6em 1.5em;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-position: right center;
+    background-size: 200% auto;
+    -webkit-animation: pulse512 1.5s infinite;
+    animation: pulse512 1.5s infinite;
+}
+
+@keyframes pulse512 {
+    0% {
+        box-shadow: 0 0 0 0 #05bada66;
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgb(218 103 68 / 0%);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
+    }
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10vh;
+    margin-top: 20vh;
+    text-decoration: none;
+}
+
+.button .icon {
+    margin-right: 8px;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
